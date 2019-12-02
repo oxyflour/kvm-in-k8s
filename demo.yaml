@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kvm-in-docker-demo
+spec:
+  containers:
+  - name: main
+    image: pc10.yff.me/oxyflour/kvm
+    securityContext:
+      privileged: true
+    env:
+    - name: QCOW2_URL
+      value: http://pc10.yff.me/oxyflour/win7.qcow2
+  restartPolicy: Never
